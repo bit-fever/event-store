@@ -4,7 +4,7 @@ dc:
       level  : INFO
       title  : "{{.root}}'s data is ready"
       message: |
-        All prices of past instruments have been successfully downloaded and {{.root}} can be used for development and analysis.
+        All prices of past instruments have been successfully downloaded and the virtual instrument ({{.virtual}}) can be used for development and analysis.
         There are {{.instruments}} instruments in total.
 
     readyEmpty:
@@ -12,6 +12,7 @@ dc:
       title  : "{{.root}}'s data is not fully ready"
       message: |
         There are instruments (like {{.symbol}}) with no data because the data provider ({{.system}} in this case) doesn't have it. 
+        The virtual instrument ({{.virtual}}) is available but it will contain discontinuities on rollover dates.
         Please, check data availability with your provider.
 
     readyNoMatch:
@@ -19,4 +20,5 @@ dc:
       title  : "{{.root}}'s data is ready but with anomalies"
       message: |
         It was not possible to calculate the rollover delta for {{.symbol}} because there is no data continuity between it and the next instrument.
+        The virtual instrument ({{.virtual}}) is available but it will contain discontinuities on rollover dates.
         Please, check data availability with your provider ({{.system}} in this case).
